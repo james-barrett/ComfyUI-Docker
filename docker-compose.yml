@@ -12,16 +12,16 @@ services:
       - "8188:8188"
     volumes:
       # persist your models, output, and settings:
-      - /opt/docker/comfyui/models:/app/ComfyUI/models
+      - /opt/store/comfyui/models:/app/ComfyUI/models
 
       # persist your output images:
-      - /opt/docker/comfyui/output:/app/ComfyUI/output
+      - /opt/store/comfyui/output:/app/ComfyUI/output
       
       # persist all your settings & extra nodes:
       - /opt/docker/comfyui/settings:/app/ComfyUI/user/default:rw
 
       # persist just your saved flows (overrides the workflows/ in default):
-      - /opt/docker/comfyui/flows:/app/ComfyUI/user/default/workflows:rw
+      - /opt/store/comfyui/flows:/app/ComfyUI/user/default/workflows:rw
     
     runtime: nvidia
     environment:
